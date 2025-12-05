@@ -1,0 +1,63 @@
+### User registration
+POST http://localhost:8000/user-api/user
+Content-Type: application/json
+
+{
+    "name":"test1",
+    "email":"test1@gmail.com",
+    "password":"test1",
+    "todos":[]
+}
+
+### User login 
+POST http://localhost:8000/user-api/login
+Content-Type: application/json
+
+{
+    "email":"test1@gmail.com",
+    "password":"test1"   
+}
+
+###Token Verification
+GET http://localhost:8000/user-api/users
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsImlhdCI6MTc2NDg0MzExMiwiZXhwIjoxNzY0ODQ2NzEyfQ.PwfZK3pXBoRlX1h_6t_UY51luavXRizC-Iz2zv_3ft8; Path=/; HttpOnly; Secure
+
+
+### Add task
+PUT http://localhost:8000/user-api/todo/693140baaa61d67bcffd3771
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsImlhdCI6MTc2NDg0MzExMiwiZXhwIjoxNzY0ODQ2NzEyfQ.PwfZK3pXBoRlX1h_6t_UY51luavXRizC-Iz2zv_3ft8; Path=/; HttpOnly; Secure
+
+{
+    "taskName":"sleeping",
+    "description":"I sleep early on this day"   
+}
+
+### Edit task
+PUT http://localhost:8000/user-api/edit-todo/userid/693140baaa61d67bcffd3771/taskid/69315f408f5d1174bb4bccbc
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsImlhdCI6MTc2NDg0MzExMiwiZXhwIjoxNzY0ODQ2NzEyfQ.PwfZK3pXBoRlX1h_6t_UY51luavXRizC-Iz2zv_3ft8; Path=/; HttpOnly; Secure
+
+{
+    "taskName":"sleeping again",
+    "description":"I sleep early on this day"   
+}
+
+### Set task completed
+PUT http://localhost:8000/user-api/edit-status/userid/693140baaa61d67bcffd3771/taskid/69315f7f8f5d1174bb4bccc5
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsImlhdCI6MTc2NDg0MzExMiwiZXhwIjoxNzY0ODQ2NzEyfQ.PwfZK3pXBoRlX1h_6t_UY51luavXRizC-Iz2zv_3ft8; Path=/; HttpOnly; Secure
+
+{
+      
+}
+
+
+### Delete task
+PUT http://localhost:8000/user-api/delete-todo/userid/693140baaa61d67bcffd3771/taskid/69315f5a8f5d1174bb4bccc0
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsImlhdCI6MTc2NDg0MzExMiwiZXhwIjoxNzY0ODQ2NzEyfQ.PwfZK3pXBoRlX1h_6t_UY51luavXRizC-Iz2zv_3ft8; Path=/; HttpOnly; Secure
+
+{
+   
+}
